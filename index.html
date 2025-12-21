@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文 Writing Log</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>中文 Writing Log</h1>
+
+    <p>
+        A simple public log for practicing written Chinese and tracking improvement over time. Anything I don’t yet know
+        how to
+        express in Chinese may appear in English, with the goal of gradually relying less on English as I improve.
+    </p>
+
+    <hr />
+
+    <!-- Entries get added below -->
+    <section class="entry" data-date="12-19-2025">
+        <h2>[12-19-2025] - Hello</h2>
+        <p><em>Language: 中文</em></p>
+
+        <p>你好，我叫 Ethan! 这个我的第一中文 Blog Post!</p>
+    </section>
+
+    <section class="entry" data-date="12-20-2025">
+        <h2>[12-20-2025] - Thank You</h2>
+        <p><em>Language: 中文</em></p>
+
+        <p>我的第二 Post！Still learning more 字 so 谢谢 for 看！</p>
+    </section>
+
+    <section class="entry" data-date="12-21-2025">
+        <h2>[12-21-2025] - What's your Name</h2>
+        <p><em>Language: 中文</em></p>
+
+        <p>
+            我叫 Ethan！我知道 no one can respond BUT... 你叫什么名字？I know these are short posts but I want to try and make these
+            posts based on memory and 不看 at all the 字 just to make sentences. Soon I will start trying to incorporate
+            daily life and more 字!
+        </p>
+    </section>
+
+</body>
+
+</html>
+
+<script>
+    const entries = Array.from(document.querySelectorAll('.entry'));
+
+    entries.sort((a, b) => {
+        return new Date(b.dataset.date) - new Date(a.dataset.date);
+    })
+        .forEach(entry => {
+            entry.parentElement.appendChild(entry);
+        });
+</script>
