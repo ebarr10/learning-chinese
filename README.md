@@ -1,2 +1,2 @@
 # learning-chinese
-Short Chinese writing entries documenting my language learning journey.
+Writing bad Chinese in public so it gets better.
