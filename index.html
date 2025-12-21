@@ -50,18 +50,23 @@
 </html>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const entries = Array.from(document.querySelectorAll('.entry'));
-
-        entries.sort((a, b) => {
-            return new Date(b.dataset.date) - new Date(a.dataset.date);
-        })
-            .forEach(entry => {
-                entry.parentElement.appendChild(entry);
-            });
-    });
-
     document.addEventListener("DOMContentLoaded", () => {
-        alert("JS loaded");
+        const entries = Array.from(document.querySelectorAll(".entry"));
+
+        entries
+            .sort((a, b) => {
+                const aDate = a.dataset.date.split("-").map(Number);
+                const bDate = b.dataset.date.split("-").map(Number);
+
+                // Compare year, month, day manually
+                return (
+                    bDate[0] - aDate[0] ||
+                    bDate[1] - aDate[1] ||
+                    bDate[2] - aDate[2]
+                );
+            })
+            .forEach(entry => {
+                entry.parentNode.appendChild(entry);
+            });
     });
 </script>
