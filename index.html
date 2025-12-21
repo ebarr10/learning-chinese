@@ -50,12 +50,14 @@
 </html>
 
 <script>
-    const entries = Array.from(document.querySelectorAll('.entry'));
+    document.addEventListener('DOMContentLoaded', function () {
+        const entries = Array.from(document.querySelectorAll('.entry'));
 
-    entries.sort((a, b) => {
-        return new Date(b.dataset.date) - new Date(a.dataset.date);
-    })
-        .forEach(entry => {
-            entry.parentElement.appendChild(entry);
-        });
+        entries.sort((a, b) => {
+            return new Date(b.dataset.date) - new Date(a.dataset.date);
+        })
+            .forEach(entry => {
+                entry.parentElement.appendChild(entry);
+            });
+    });
 </script>
