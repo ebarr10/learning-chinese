@@ -20,7 +20,7 @@
     <hr />
 
     <!-- Entries get added below -->
-    <section class="entry" data-date="12-19-2025">
+    <section class="entry" data-order="1">
         <h2>[12-19-2025] - Hello</h2>
         <p><em>Language: 中文</em></p>
 
@@ -28,14 +28,14 @@
         </p>
     </section>
 
-    <section class="entry" data-date="12-20-2025">
+    <section class="entry" data-order="2">
         <h2>[12-20-2025] - Thank You</h2>
         <p><em>Language: 中文</em></p>
 
         <p>我的第二 Post！Still learning more 字 so 谢谢 for 看！</p>
     </section>
 
-    <section class="entry" data-date="12-21-2025">
+    <section class="entry" data-order="3">
         <h2>[12-21-2025] - What's your Name</h2>
         <p><em>Language: 中文</em></p>
 
@@ -46,7 +46,7 @@
         </p>
     </section>
 
-    <section class="entry" data-date="12-25-2025">
+    <section class="entry" data-order="4">
         <h2>[12-25-2025] - Merry Christmas</h2>
         <p><em>Language: 中文</em></p>
 
@@ -57,7 +57,7 @@
         </p>
     </section>
 
-    <section class="entry" data-date="12-27-2025">
+    <section class="entry" data-order="5">
         <h2>[12-27-2025] - Family</h2>
         <p><em>Language: 中文</em></p>
 
@@ -65,7 +65,7 @@
         </p>
     </section>
 
-    <section class="entry" data-date="12-31-2025">
+    <section class="entry" data-order="6">
         <h2>[12-31-2025] - New Year</h2>
         <p><em>Language: 中文</em></p>
 
@@ -75,6 +75,15 @@
 
     </section>
 
+    <section class="entry" data-order="7">
+        <h2>[01-07-2026] - Dates</h2>
+        <p><em>Language: 中文</em></p>
+
+        <p>你好！昨天我学习了月和号。For Example: 明天几月几号，　星期几？明天一月八号，星期四。昨天一月六号，星期二。我很学习东西但是 I still have a lot to go.</p>
+        <p>For practice I'll make up a future plan to talk about: 四月一号是April Fools!
+            我不去学校因为我不是学生但是我看书，也做中国菜。我会做中国菜但是我女朋友做的菜得非常好吃。</p>
+
+    </section>
 </body>
 
 </html>
@@ -86,14 +95,14 @@
 
         entries
             .sort((a, b) => {
-                const aDate = a.dataset.date.split("-").map(Number);
-                const bDate = b.dataset.date.split("-").map(Number);
+                const aOrder = a.dataset.order.split("-").map(Number);
+                const bOrder = b.dataset.order.split("-").map(Number);
 
                 // Compare year, month, day manually
                 return (
-                    bDate[0] - aDate[0] ||
-                    bDate[1] - aDate[1] ||
-                    bDate[2] - aDate[2]
+                    bOrder[0] - aOrder[0] ||
+                    bOrder[1] - aOrder[1] ||
+                    bOrder[2] - aOrder[2]
                 );
             })
             .forEach(entry => {
